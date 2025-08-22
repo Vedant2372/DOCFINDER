@@ -1,0 +1,37 @@
+{
+  "name": "document-finder-electron",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.docfinder.app",
+    "productName": "DocFinder",
+    "files": [
+      "**/*",
+      "!build",
+      "!__pycache__",
+      "!dist/*.spec",
+      "!dist/*.py",
+      "!*.log"
+    ],
+    "extraResources": [
+      {
+        "from": "dist/app.exe",
+        "to": "backend/app.exe"
+      }
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "devDependencies": {
+    "electron": "^25.3.1",
+    "electron-builder": "^24.6.0"
+  }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document Finder - Results</title>
+  <link rel="stylesheet" href="result.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div id="results"></div>
+
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="logo-removebg-preview.png" alt="Logo">
+        <h2>DOC FINDER</h2>
+      </div>
+      <div class="search-bar">
+        <input id="searchInput" type="text" placeholder="Search your Documents">
+        <button id="searchBtn" onclick="searchDocuments()">SEARCH</button>
+      </div>
+
+      <!-- ABOUT MODAL -->
+      <button class="about-btn" id="aboutBtn">ABOUT US</button>
+      <div id="aboutModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>📄 About Us</h2>
+          <p>
+            Welcome to <strong>DocFinder</strong>!<br><br>
+            Your intelligent assistant for finding documents — <br>
+            <em>fast</em>, <em>accurate</em>, and <em>effortless</em>.<br><br>
+            With DocFinder, you can:<br>
+            🔍&nbsp; Instantly locate important files using smart search<br>
+            ⚡&nbsp; Organize and scan documents in just seconds<br>
+            🖥️&nbsp; Enjoy a smooth, user-friendly experience on any device<br><br>
+            Whether you're a student, professional, or team member —<br>
+            <strong>DocFinder saves your time and boosts your productivity.</strong><br><br>
+            ✨ Let your documents find you!
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="results-area">
+        <div class="results-frame" id="resultsFrame">
+          <!-- Results will be injected here dynamically -->
+        </div>
+      </section>
+
+      <div class="homepage-right">
+        <h3 class="folder heading">FOLDERS</h3>
+        <div class="folder-list">
+          <div class="folder-card">📁 <strong>Documents</strong><span class="found">0 Found</span></div>
+          <div class="folder-card">📁 <strong>Downloads</strong><span class="found">0 Found</span></div>
+          <div class="folder-card">📁 <strong>Desktop</strong><span class="found">0 Found</span></div>
+          <div class="folder-card">📁 <strong>C Drive</strong><span class="found">0 Found</span></div>
+          <div class="folder-card">📁 <strong>Pictures</strong><span class="found">0 Found</span></div>
+          <div class="folder-card">📁 <strong>D Drive</strong><span class="found">0 Found</span></div>
+          <div class="folder-card">📁 <strong>Others</strong><span class="found">0 Found</span></div>
+        </div>
+
+        <div class="final-msg-wrapper">
+          <img src="file.png" alt="Folder Icon" />
+          <div class="final-msg">
+            <p><strong>You’re All Set with Document Finder!</strong></p>
+            <p>Effortless search and get documents at one place</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script>
+  const aboutBtn = document.getElementById("aboutBtn");
+  const aboutModal = document.getElementById("aboutModal");
+  const closeBtn = aboutModal.querySelector(".close");
+
+  aboutBtn.onclick = () => {
+    aboutModal.style.display = "block";
+  };
+
+  closeBtn.onclick = () => {
+    aboutModal.style.display = "none";
+  };
+
+  window.onclick = (event) => {
+    if (event.target === aboutModal) {
+      aboutModal.style.display = "none";
+    }
+  };
+</script>
+
+  <script src="result.js"></script>
+  <script src="render.js"></script>
+</body>
+</html>
